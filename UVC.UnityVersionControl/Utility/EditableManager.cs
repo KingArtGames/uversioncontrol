@@ -21,7 +21,7 @@ namespace UVC
         {
             //Debug.Log("Setting '" + obj + "' to " + (editable ? "editable" : "readonly"));
             if (AvoidGUILock(obj))
-                editable = true;
+                return;
             if (obj != null && !IsBuiltinAsset(obj.GetAssetPath()) && !EditorUtility.IsPersistent(obj) &&
                 !(obj is GameObject && PrefabHelper.IsPrefabParent(obj))) // Do not modify object flags for Project-Prefab GameObjects
             {
