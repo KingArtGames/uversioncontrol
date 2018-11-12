@@ -42,7 +42,7 @@ namespace UVC
 
             OnSettingsChanged();
 
-            AppDomain.CurrentDomain.DomainUnload += (o, d) =>
+            EditorApplication.quitting += () =>
             {
                 EditorPrefs.SetBool("VCSSettings/vcEnabled", vcEnabled);
                 EditorPrefs.SetBool("VCSSettings/lockPrefabs", lockPrefabs);
